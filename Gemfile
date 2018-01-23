@@ -2,8 +2,12 @@
 
 source "https://rubygems.org"
 
+ruby '2.4.1'
+
 git_source(:github) {|bookmark_manager| "https://github.com/bookmark_manager" }
 
-# gem "rails"
 gem 'data_mapper'
-gem 'dm_postgres_adaptor'
+gem 'dm-postgres-adapter'
+gem 'capybara'
+gem 'sinatra'
+gem 'rspec'
