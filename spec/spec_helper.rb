@@ -3,7 +3,9 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-require 'features/web_helpers'
+require 'simplecov'
+require 'simplecov-console'
+# require 'features/web_helpers'
 
 Capybara.app = Bookmark_Manager
 
@@ -44,6 +46,12 @@ RSpec.configure do |config|
     # a real object. This is generally recommended, and will default to
     # `true` in RSpec 4.
     mocks.verify_partial_doubles = true
+  end
+
+  config.after(:suite) do
+    puts
+    puts "\e[33mHave you considered running rubocop? It will help you improve your code!\e[0m"
+    puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 
   # This option will default to `:apply_to_host_groups` in RSpec 4 (and will

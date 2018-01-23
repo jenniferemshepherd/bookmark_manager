@@ -8,6 +8,12 @@ git_source(:github) {|bookmark_manager| "https://github.com/bookmark_manager" }
 
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
-gem 'capybara'
 gem 'sinatra'
-gem 'rspec'
+
+group :test do
+  gem 'capybara'
+  gem 'rspec'
+  gem 'rubocop'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
+end
