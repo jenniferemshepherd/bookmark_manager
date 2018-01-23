@@ -1,8 +1,7 @@
 feature 'homepage' do
   scenario 'homepage exists' do
-    visit('/')
+    visit('/links')
     expect(page.status_code).to eq 200
-    expect(page).to have_content "Here are your bookmarks:"
   end
 end
 
