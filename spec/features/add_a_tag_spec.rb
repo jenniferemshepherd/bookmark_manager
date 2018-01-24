@@ -6,7 +6,7 @@ feature 'adding a tag' do
     fill_in :new_link_tag, with: 'friends'
     click_button 'create link'
     link = Link.first
-    expect(link.tags.map(&:name)).to include('friends')
+    expect(link.tags.map(&:tag)).to include('friends')
   end
 end
 # Link.create(url: 'http://www.elliewem.co.uk', title: 'Ellie Wem')
