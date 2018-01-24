@@ -27,7 +27,7 @@ feature 'checking the tags can be filtered' do
     # fill_in :new_link_tag, with: 'search'
     # click_button 'create link'
     # click_button 'bubbles'
-    expect(page).not_to have_content('Google')
+    expect(page).not_to have_link('Google')
     expect(page).to have_content('Ellie Wem')
   end
 end
