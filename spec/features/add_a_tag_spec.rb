@@ -9,7 +9,3 @@ feature 'adding a tag' do
     expect(link.tags.map(&:tag)).to include('friends')
   end
 end
-# Link.create(url: 'http://www.elliewem.co.uk', title: 'Ellie Wem')
-#     visit('/links')
-#     within 'ul#links' do
-#       expect(page).to have_content('Ellie Wem')
