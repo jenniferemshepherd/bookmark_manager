@@ -18,6 +18,18 @@ class Bookmark_Manager < Sinatra::Base
   get '/links/new' do
     erb(:add_new_link)
   end
+  #
+  # get '/tags/bubbles' do
+  #   erb(:tags)
+  # end
+  #
+
+  get '/tags/:tag' do
+    # tag = Tag.first(tag: params[:tag])
+    # @links = tag ? tag.links : []
+    @links = Link.all(Link.tags.tag => params[:tag])
+    erb(:links)
+  end
 
   post '/links' do
     link = Link.new(url: params[:new_link_url],
