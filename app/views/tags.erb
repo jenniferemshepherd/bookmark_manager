@@ -2,7 +2,7 @@
 
 <ul id='links'>
   <% @links.each do |link| %>
-    <% if link.tags.map(&:tag).include?('bubbles') %>
+    <% if link.tags.map(&:tag).include?(@tag) %>
         <li>
           <a href="<%= link.url %>"><%= link.title %></a>
         </li>
