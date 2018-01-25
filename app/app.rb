@@ -7,6 +7,13 @@ class Bookmark_Manager < Sinatra::Base
   run! if app_file == $0
 
   get '/' do
+    erb(:sign_up)
+  end
+
+  post '/signed_up' do
+    @user = User.new(email: params[:email],
+                password: params[:password])
+    $email = @user.email
     redirect '/links'
   end
 
