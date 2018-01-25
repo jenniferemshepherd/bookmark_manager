@@ -4,6 +4,8 @@ require_relative 'data_mapper_setup'
 
 class Bookmark_Manager < Sinatra::Base
 
+  enable :sessions
+
   run! if app_file == $0
 
   get '/' do
@@ -11,13 +13,14 @@ class Bookmark_Manager < Sinatra::Base
   end
 
   post '/signed_up' do
-    @user = User.new(email: params[:email],
+    @user = User.create(email: params[:email],
                 password: params[:password])
-    $email = @user.email
+    session[:email] = @user.email
     redirect '/links'
   end
 
   get '/links' do
+    @email = session[:email]
     @links = Link.all
     erb(:links)
   end
