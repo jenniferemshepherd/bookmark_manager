@@ -60,12 +60,16 @@ RSpec.configure do |config|
     DatabaseCleaner.start
   end
 
-  config.after(:suite) do
-    puts
-    puts "\e[33mHave you considered running rubocop? It will help you improve your code!\e[0m"
-    puts "\e[33mTry it now! Just run: rubocop\e[0m"
+  config.after(:each) do
     DatabaseCleaner.clean
   end
+
+  # config.after(:suite) do
+  #   puts
+  #   puts "\e[33mHave you considered running rubocop? It will help you improve your code!\e[0m"
+  #   puts "\e[33mTry it now! Just run: rubocop\e[0m"
+  #   DatabaseCleaner.clean
+  # end
 
   # This option will default to `:apply_to_host_groups` in RSpec 4 (and will
   # have no way to turn it off -- the option exists only for backwards
