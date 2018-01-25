@@ -87,6 +87,7 @@ GEM
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
     rainbow (3.0.0)
+    rake (12.3.0)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
@@ -137,6 +138,7 @@ DEPENDENCIES
   data_mapper
   database_cleaner
   dm-postgres-adapter
+  rake
   rspec
   rubocop
   simplecov
@@ -147,4 +149,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.16.0
+   1.16.1

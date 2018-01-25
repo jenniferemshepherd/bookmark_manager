@@ -9,6 +9,7 @@ git_source(:github) {|bookmark_manager| "https://github.com/bookmark_manager" }
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'sinatra'
+gem 'rake'
 
 group :test do
   gem 'capybara'
