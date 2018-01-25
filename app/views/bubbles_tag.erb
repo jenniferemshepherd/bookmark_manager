@@ -1,0 +1,23 @@
+<h1> Links with 'bubbles' tag </h1>
+
+<ul id='links'>
+  <% @links.each do |link| %>
+    <% if link.tags.map(&:tag).include?('bubbles') %>
+        <li>
+          <a href="<%= link.url %>"><%= link.title %></a>
+        </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<form action="/links/new">
+  <input type="submit" value="add link">
+</form>
+
+<form action="/links">
+  <input type="submit" value="links">
+</form>
+
+<form action="/tags/bubbles">
+  <input type="submit" value="bubbles">
+</form>
